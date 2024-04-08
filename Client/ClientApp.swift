@@ -2,10 +2,8 @@ import SwiftUI
 import ClientPackageTarget
 
 @main
-struct ClientApp: App {
+struct MainApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+        AppScene()
     }
 }
