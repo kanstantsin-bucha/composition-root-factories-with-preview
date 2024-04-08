@@ -1,0 +1,18 @@
+# Fastlane
+fastlane/report.xml
+
+# Xcode
+xcuserdata/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+
+# MacOS Filesystem
+.DS_Store
+
+# Configs
+ClientPackage/Sources/ClientPackageTarget/Generated/AppConfig.swift
