@@ -7,8 +7,8 @@ class CompositionRoot { // swiftlint:disable:this type_body_length
     static let shared = CompositionRoot()
 
     private let homeNavigation: HomeView.NavigationModel
+    private let animeRepository = AnimeRepository()
     private let errorAlertModel = ErrorAlertModel()
-    private let itemsRepository = ItemsRepository()
     private let settingRepository = SettingRepository()
 
     private init() {
@@ -55,7 +55,7 @@ class CompositionRoot { // swiftlint:disable:this type_body_length
     var homeViewModelFactory: Factory<HomeView.Model> {
         .init {
             .init(
-                repository: self.itemsRepository,
+                repository: self.animeRepository,
                 settings: self.settingRepository
             )
         }
