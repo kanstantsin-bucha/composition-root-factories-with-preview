@@ -17,6 +17,13 @@ Negative aspects:
 * It is hard to create acceptance tests for this architecture.
 * It is hard to follow for Junior Developers.
 
+What you should remember?
+
+* View init will be called again only:
+    *   if initialization parameters changed.
+    *   scene instance reloads the whole tree
+* Each view that uses a Factory to produce child views should own that factory.
+means you either create views inside of initializer or store the factory itself as a local property
 
 # Why do we heed a ClientPackage?
 

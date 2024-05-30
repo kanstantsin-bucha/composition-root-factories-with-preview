@@ -12,7 +12,7 @@ class CompositionRoot { // swiftlint:disable:this type_body_length
     private let settingRepository = SettingRepository()
 
     private init() {
-        Logs.main.log("init: composition root")
+        Logs.main.log("composition root: init")
         self.homeNavigation = .init()
     }
 
@@ -41,8 +41,9 @@ class CompositionRoot { // swiftlint:disable:this type_body_length
     // MARK: - Window Views
 
     var homeViewFactory: Factory<HomeView> {
-        .init {
-            Logs.main.log("homeViewFactory created a HomeView instance")
+        Logs.main.log("composition root: homeViewFactory provided")
+        return .init {
+            Logs.main.log("composition root: homeViewFactory: produce an instance")
             return .init(
                 navigationModel: self.homeNavigation,
                 errorAlertModel: self.errorAlertModel,
@@ -54,8 +55,9 @@ class CompositionRoot { // swiftlint:disable:this type_body_length
     // MARK: - Window View Models
 
     var homeViewModelFactory: Factory<HomeView.Model> {
-        .init {
-            Logs.main.log("homeViewModelFactory created a HomeView.Model instance")
+        Logs.main.log("composition root: homeViewModelFactory provided")
+        return .init {
+            Logs.main.log("composition root: homeViewModelFactory: produce an instance")
             return .init(
                 repository: self.animeRepository,
                 settings: self.settingRepository
