@@ -33,7 +33,7 @@ enum AppNavigation {
     }
 
     enum HomeNavigationItem: Hashable {
-        case myAView(stencil: AnimeListItem)
-        case myBView(stencil: AnimeListItem)
+        case animeDetailsView(AnimeListItem)
+        case animePreviewView(AnimeListItem)
     }
 }
