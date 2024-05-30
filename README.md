@@ -6,9 +6,10 @@ Positive aspects:
 
 * Get flexibility of moving Views around your app in any direction
 * Get silver bullet solution that works for all kinds of navigation
-* All inject all your dependencies in one place
+* Inject all your dependencies in one place
 * Get an intuitive composition style workflow
 * Get instant preview of any view
+* Prevent you previews code from leaking into production app builds
 * Reduce merge conflicts by using a Root Package and Swift Package Manager
 
 Negative aspects:

@@ -1,6 +1,7 @@
 import OSLogs
 import SwiftUI
 
+@MainActor
 public struct AppScene: Scene {
     /// Composition root should be a `@State` or shared singleton.
     /// I chose singleton to prevent any possibility of it being initialized several times

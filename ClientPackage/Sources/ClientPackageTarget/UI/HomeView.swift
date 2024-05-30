@@ -6,7 +6,7 @@ struct HomeView: View {
 
     private let navigationModel: NavigationModel
     private let errorAlertModel: ErrorAlertModel
-    @State private var model: HomeView.Model
+    @StateObject private var model: HomeView.Model
 
     @MainActor
     init(
@@ -16,7 +16,7 @@ struct HomeView: View {
     ) {
         self.navigationModel = navigationModel
         self.errorAlertModel = errorAlertModel
-        _model = State(wrappedValue: modelFactory.create())
+        _model = StateObject(wrappedValue: modelFactory.create())
     }
 
     public var body: some View {
@@ -50,7 +50,7 @@ extension HomeView {
 
     @MainActor
     @Observable
-    final class Model {
+    final class Model: ObservableObject {
 
         private let repository: AnimeRepository
         private let settings: SettingRepository

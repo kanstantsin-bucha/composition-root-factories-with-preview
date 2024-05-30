@@ -42,7 +42,8 @@ class CompositionRoot { // swiftlint:disable:this type_body_length
 
     var homeViewFactory: Factory<HomeView> {
         .init {
-            .init(
+            Logs.main.log("homeViewFactory created a HomeView instance")
+            return .init(
                 navigationModel: self.homeNavigation,
                 errorAlertModel: self.errorAlertModel,
                 modelFactory: self.homeViewModelFactory
@@ -54,7 +55,8 @@ class CompositionRoot { // swiftlint:disable:this type_body_length
 
     var homeViewModelFactory: Factory<HomeView.Model> {
         .init {
-            .init(
+            Logs.main.log("homeViewModelFactory created a HomeView.Model instance")
+            return .init(
                 repository: self.animeRepository,
                 settings: self.settingRepository
             )

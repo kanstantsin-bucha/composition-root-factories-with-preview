@@ -5,7 +5,7 @@ class AnimeRepository {
     private let urlSession = URLSession.shared
     
     func getAnime() async throws -> [AnimeListItem] {
-        let request = URLRequest(url: LinksRepository.getAnimeLink)
+        let request = URLRequest(url: Constants.Links.getAnimeLink)
         let (data, response) = try await urlSession.data(for: request)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             throw NetworkError.invalidStatusCode

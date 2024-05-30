@@ -22,6 +22,19 @@ class Factory<Content>: Equatable {
     static func == (lhs: Factory, rhs: Factory) -> Bool { true }
 }
 
+// TODO: think of idea of cached factory 
+//class CachedFactory<Content>: Equatable {
+//
+//    typealias Creator = @MainActor () -> Content
+//    let create: Creator
+//
+//    init(closure: @escaping Creator) {
+//        create = closure
+//    }
+//
+//    static func == (lhs: CachedFactory, rhs: CachedFactory) -> Bool { true }
+//}
+
 class ParamsFactory<Content, Params: Equatable>: Equatable {
 
     typealias Creator = @MainActor (Params) -> Content
